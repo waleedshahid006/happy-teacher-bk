@@ -2,13 +2,16 @@ const express = require("express");
 const connectDB = require("./config/db");
 const userRoutes = require("./src/api/user");
 const app = express();
+const cors = require("cors");
 
 // Connect DB
 connectDB();
 
 // Init Middleware
+app.use(cors());
 app.use(express.json({ extended: false }));
 
+// test api
 app.get("/", (_req, res) => res.send("API Running"));
 
 // Define routes
