@@ -15,7 +15,7 @@ app.use(express.json({ extended: false }));
 app.get("/", (_req, res) => res.send("API Running"));
 
 // Define routes
-app.use("/user", userRoutes);
+app.use("/api/user", userRoutes);
 
 // port
 const PORT = process.env.PORT || 4000;
